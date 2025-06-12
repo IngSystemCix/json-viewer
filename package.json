@@ -1,0 +1,32 @@
+{
+  "name": "@ingsystemcix/json-viewer",
+  "version": "1.0.0",
+  "description": "A simple JSON viewer for Bun",
+  "author": "Juan Bladimir Romero Collazos",
+  "license": "MIT",
+  "main": "dist/json-viewer.js",
+  "scripts": {
+    "test-playwright": "playwright test --config=playwright.config.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/bun": "latest",
+    "playwright": "^1.53.0",
+    "serve": "^14.2.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IngSystemCix/json-viewer.git"
+  },
+  "keywords": [
+    "json",
+    "angular",
+    "react",
+    "viewer",
+    "bun",
+    "playwright"
+  ]
+}
