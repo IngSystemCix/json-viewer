@@ -1,6 +1,6 @@
 {
   "name": "@ingsystemcix/json-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple JSON viewer for Bun",
   "author": "Juan Bladimir Romero Collazos",
   "license": "MIT",

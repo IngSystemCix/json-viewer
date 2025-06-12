@@ -25,8 +25,71 @@ class JsonViewer extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
       <style>
-        /* Styles omitted for brevity */
+        :host {
+          display: none;
+          position: fixed;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: rgba(0, 0, 0, 0.6);
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+          backdrop-filter: blur(3px);
+          transition: opacity 0.3s ease;
+        }
+
+        :host(.visible) {
+          display: flex;
+          opacity: 1;
+        }
+
+        .popup {
+          background: #ffffff;
+          padding: 25px;
+          border-radius: 12px;
+          max-width: 80%;
+          max-height: 80%;
+          overflow: auto;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+          position: relative;
+          animation: fadeIn 0.3s ease;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 12px;
+          background: transparent;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+          color: #888;
+          transition: color 0.2s ease;
+        }
+
+        .close-btn:hover {
+          color: #333;
+        }
+
+        pre {
+          text-align: left;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          background: #f5f5f5;
+          padding: 15px;
+          border-radius: 8px;
+          color: #333;
+          font-size: 14px;
+          line-height: 1.4;
+          overflow-x: auto;
+        }
       </style>
+
       <div class="popup">
         <button class="close-btn">&times;</button>
         <pre></pre>

@@ -14,6 +14,15 @@ JSON de forma legible.
 
 ---
 
+## Versiones
+
+- **1.0.0**: Versión inicial con funcionalidad básica de
+  visualización de JSON **NO USARLO**.
+- **1.0.1**: Mejora en la detección de cambios del
+  atributo `data` y corrección de errores menores.
+
+---
+
 ## 📦 Instalación
 
 ### con npm
