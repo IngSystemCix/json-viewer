@@ -176,6 +176,54 @@ const JsonViewerComponent = () => {
 export default JsonViewerComponent;
 ```
 
+### Angular
+
+```typescript
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from "@angular/core";
+import "@ingsystemcix/json-viewer";
+
+@Component({
+  selector: "app-root",
+  standalone: true,
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppComponent implements AfterViewInit {
+  private jsonViewer!: HTMLElement & { data: any; show: () => void };
+
+  ngAfterViewInit() {
+    this.jsonViewer = document.querySelector("json-viewer") as HTMLElement & {
+      data: any;
+      show: () => void;
+    };
+
+    if (this.jsonViewer) {
+      this.jsonViewer.data = {
+        mensaje: "Hola desde Angular",
+        numeros: [1, 2, 3],
+      };
+    }
+  }
+
+  mostrar() {
+    if (this.jsonViewer) {
+      this.jsonViewer.show();
+    }
+  }
+}
+```
+
+```html
+<json-viewer />
+<button (click)="mostrar()">Mostrar JSON</button>
+<router-outlet />
+```
+
 ---
 
 ## ⚙️ Detalles Técnicos
